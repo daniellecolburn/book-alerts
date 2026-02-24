@@ -1,0 +1,21 @@
+name: Book Check Schedule
+
+on:
+  schedule:
+    # This runs at 9:00 AM EST (14:00 UTC) every Tuesday (2) and Friday (5)
+    - cron: '0 14 * * 2,5'
+  workflow_dispatch: # This adds a "Run Now" button for testing
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      - name: Install Tools
+        run: pip install feedparser requests
+      - name: Check Books
+        run: python main.py
