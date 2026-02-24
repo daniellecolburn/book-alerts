@@ -4,7 +4,7 @@ from datetime import datetime
 
 # --- CONFIGURATION (CHANGE THESE TWO) ---
 GOODREADS_RSS_URL = "https://www.goodreads.com/review/list_rss/176945722?shelf=2026-to-read"
-NTFY_TOPIC_NAME = "danielle-library-alerts-2026" 
+NTFY_TOPIC_NAME = "danielle-book-alerts" 
 # ---------------------------------------
 
 def get_release_date(title, author):
